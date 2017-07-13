@@ -1,9 +1,11 @@
 import numpy as np
+import pandas as pd
 
 class PERCEPTRON:
 
     def __init__(self, eta=0.01, n_itr=10):
-        pass
+        self.eta = eta
+        self.n_itr = n_itr
 
     def net_input(self, X):
         return np.dot(X, self.w_[1:]) + self.w_[0]
@@ -18,6 +20,11 @@ class PERCEPTRON:
         self.errors_ = []
 
         for _ in range(self.n_itr):
-            pass
+            errors = 0
+            for xi, target in zip(X,y)
+                update = self.eta * (target - self.predict(xi))
+                self.w_[1:] += update * xi
+                self.w_[0] += update
+                errors += int(update!=0)
 
-        pass
+            self.errors_.append(errors)
